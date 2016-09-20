@@ -5,6 +5,7 @@ import {Route, Router, browserHistory, IndexRoute} from 'react-router';
 
 import Base     from './Components/Base'
 import Home     from './Components/Pages/Home'
+import About    from './Components/Pages/About'
 import NotFound from './Components/Pages/NotFound'
 
 export default function getRoutes() {
@@ -15,6 +16,7 @@ export default function getRoutes() {
             <Route path="/" component={Base}>
 
                 <IndexRoute component={Home}/>
+                <Route path="/about" component={About}/>
 
             </Route>
 

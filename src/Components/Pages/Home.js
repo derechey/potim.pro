@@ -1,6 +1,8 @@
 import React from 'react';
 import CSSModules from 'react-css-modules'
-
+import Owner from '../../Components/Elements/Owner'
+import Navigation from '../../Components/Layout/Navigation'
+import Wrapper from '../../Components/Wrapper'
 
 //Import Global Style
 import style from '../../Root.scss'
@@ -18,8 +20,11 @@ class Home extends React.Component {
 
 
         return (
-            <div>
-                home
+            <div styleName="home">
+                <Wrapper>
+                    <Navigation />
+                    <Owner />
+                </Wrapper>
             </div>
         )
     }
