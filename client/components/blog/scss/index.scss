@@ -1,0 +1,22 @@
+$pageNameColor :#615f5f;
+
+.root {
+  box-shadow: 2px 1px 5px 2px #777;
+  margin-top: 20px;
+
+  .pageName {
+    text-align: center;
+    color: $pageNameColor;
+  }
+
+  .imgBlock{
+    display: flex;
+    justify-content: center;
+    margin: 35px;
+  }
+
+  .txtBlock {
+    padding: 50px;
+  }
+
+}
