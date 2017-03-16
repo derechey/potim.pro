@@ -14,6 +14,7 @@ const Blog = () => (
                 </div>
                 <div>
                     <p className="txtBlock">
+
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum interdum venenatis.
                         Ut venenatis tristique justo vitae pulvinar. Cras consectetur erat nisi, non finibus purus
                         elementum non. Suspendisse consequat odio erat, in vulputate risus interdum non. Integer eget
