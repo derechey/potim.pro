@@ -1,18 +1,15 @@
-import React from 'react';
+import React, {Component} from "react";
 import AppBar from 'material-ui/AppBar';
-import Menu from './menu'
 
-
-const styles = {
-    background: '#8c8b8b'
-};
-
-const Header = () => (
-    <AppBar
-        style={styles}
-        title="PRO"
-        iconElementRight={<Menu />}
-    />
-);
+class Header extends Component {
+    render() {
+        return (
+            <AppBar
+                title="Title"
+                iconClassNameRight="muidocs-icon-navigation-expand-more"
+            />
+        )
+    }
+}
 
 export default Header;

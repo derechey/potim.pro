@@ -1,42 +1,24 @@
-import '../assets'
-
 import  React, {Component} from  'react'
 import ReactDOM from 'react-dom';
-
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {Provider} from 'react-redux'
+import {Router, browserHistory} from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {lightGreen600} from 'material-ui/styles/colors';
-import Header from './components/header'
-import Blog from './components/blog'
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
+import routes from "./routes";
+import configureStore from "./store";
+
+const store = configureStore();
 
 injectTapEventPlugin();
 
-const muiTheme = getMuiTheme({
-    palette: {
-
-        textColor: '#333'
-    },
-    paper: {
-        borderWidth: 5,
-        borderStyle: 'solid',
-        borderColor: '#000'
-    },
-    drawer: {
-        backgroundColor: 'red'
-    }
-});
-
 class Root extends Component {
-
     render() {
-
         return (
-            <MuiThemeProvider muiTheme={muiTheme}>
-               <div>
-                   <Header/>
-                   <Blog/>
-               </div>
+            <MuiThemeProvider>
+                <Provider store={store}>
+                    <Router history={browserHistory} routes={routes(store)} onUpdate={() => window.scrollTo(0, 0)}/>
+                </Provider>
             </MuiThemeProvider>
         )
     }
