@@ -1,0 +1,1 @@
+export const SERVER_API = `https://license.ittcms.io`;

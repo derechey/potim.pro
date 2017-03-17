@@ -1,6 +1,5 @@
 import  React, {Component} from  'react'
 import {connect} from "react-redux";
-
 import {Header,Footer} from '../../components'
 
 
@@ -11,15 +10,14 @@ class App extends Component {
         super(props);
     }
 
-
     render() {
         return (
 
             <section>
                 <Header/>
-                <div>
-                    {this.props.children}
-                </div>
+                    <div className="container">
+                        {this.props.children}
+                    </div>
                 <Footer/>
             </section>
         )

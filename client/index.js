@@ -1,3 +1,4 @@
+import '../assets'
 import  React, {Component} from  'react'
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
@@ -17,7 +18,7 @@ class Root extends Component {
         return (
             <MuiThemeProvider>
                 <Provider store={store}>
-                    <Router history={browserHistory} routes={routes(store)} onUpdate={() => window.scrollTo(0, 0)}/>
+                    <Router className="container" history={browserHistory} routes={routes(store)} onUpdate={() => window.scrollTo(0, 0)}/>
                 </Provider>
             </MuiThemeProvider>
         )

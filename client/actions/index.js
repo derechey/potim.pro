@@ -1,4 +1,14 @@
+import {getApi} from './api';
+import {showError,hideError}  from './error';
+import {getSetting}  from './setting';
+import {getNews}  from './news';
 
-/*Error*/
-export {showError, hideError} from './error';
+
+export {
+    showError,
+    hideError,
+    getApi,
+    getSetting,
+    getNews
+}
 
