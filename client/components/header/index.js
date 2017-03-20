@@ -33,6 +33,8 @@ class Header extends Component {
 
 
     render() {
+        const setting = this.props
+        console.log('SETTING',seting);
         return (
             <div>
                 <AppBar
