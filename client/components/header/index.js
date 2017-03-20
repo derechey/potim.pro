@@ -24,7 +24,11 @@ class Header extends Component {
     }
 
     componentDidMount() {
+        (window.innerWidth <= 900)
+            ? this.setState({open: false})
+            : this.setState({open: true});
         window.addEventListener('resize', this.toggleDrawer.bind(this))
+
     }
 
     toggleDrawer(event) {
