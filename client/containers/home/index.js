@@ -59,7 +59,6 @@ class Home extends Component {
                                                  alt="background"/>
                                         </div>
                                     </li>
-
                                     <ul>
                                         <li>
                                             <ul>
@@ -89,10 +88,7 @@ class Home extends Component {
                                                 </li>
                                             </ul>
                                         </li>
-
                                     </ul>
-
-
                                     <li>
                                         <div style={{
                                             width: 80,
@@ -106,8 +102,6 @@ class Home extends Component {
                                         </div>
                                     </li>
                                 </ul>
-
-
                                 <div>
                                     <h2>Junior React JS</h2>
                                 </div>
@@ -125,7 +119,7 @@ class Home extends Component {
                                     <img style={{height: '100%'}} src={require('../../../assets/avatar.jpg')}
                                          alt="background"/>
                                 </div>
-                                <div style={{fontSize: 25, listStyleType: 'none', textAlign: 'left'}}>
+                                <div className="skillsHTML">
                                     <ul>
                                         <li>
                                             <p>HTML</p>
