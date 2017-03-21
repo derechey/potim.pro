@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getNews} from '../../actions';
 import * as scss from './scss/root.scss'
-import Slider from 'nuka-carousel'
+import {autoPlay} from 'react-swipeable-views-utils';
+import SwipeableViews from "react-swipeable-views";
 import CircularProgress from 'material-ui/CircularProgress';
 
 @connect(({news, state}) => ({...news, state}), {getNews})
@@ -15,7 +16,7 @@ class Home extends Component {
     }
 
     render() {
-
+        const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
         return (
             <div className="row animated fadeInUp">
                 <section className="col-lg-12 col-md-12 col-xs-12">
@@ -36,7 +37,15 @@ class Home extends Component {
                 </section>
                 <section className="col-lg-12 col-md-12 col-xs-12">
                     <div className="infoSlider">
-                        <Slider style={{margin:'10px',height: '250px',overflow:'hidden'}} speed={500} autoplay={true} autoplayInterval={5000} wrapAround={true} cellAlign="center">
+                        <AutoPlaySwipeableViews interval={5000} style={{margin:'10px',height: '250px',overflow:'hidden'}}>
+                            <div style={{display:'flex'}}>
+                                <div style={{width:100,height:100, borderRadius:'100%',border:'5px solid white',overflow:'hidden'}}>
+                                    <img style={{height:'100%'}} src={require('../../../assets/avatar.jpg')} alt="background"/>
+                                </div>
+                                <div>
+                                    <h2>Junior React JS</h2>
+                                </div>
+                            </div>
                             <div style={{display:'flex'}}>
                                 <div style={{width:100,height:100, borderRadius:'100%',border:'5px solid white',overflow:'hidden'}}>
                                     <img style={{height:'100%'}} src={require('../../../assets/avatar.jpg')} alt="background"/>
@@ -46,7 +55,7 @@ class Home extends Component {
                                 </div>
                             </div>
 
-                        </Slider>
+                        </AutoPlaySwipeableViews>
                     </div>
 
                 </section>
