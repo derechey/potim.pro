@@ -5,9 +5,7 @@ import * as scss from './scss/root.scss'
 import Slider from 'nuka-carousel'
 import CircularProgress from 'material-ui/CircularProgress';
 
-
 @connect(({news, state}) => ({...news, state}), {getNews})
-
 
 class Home extends Component {
 
@@ -16,11 +14,7 @@ class Home extends Component {
         getNews()
     }
 
-
-
-
     render() {
-
 
         return (
             <div className="row animated fadeInUp">
