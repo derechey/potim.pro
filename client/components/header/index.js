@@ -41,11 +41,11 @@ class Header extends Component {
     renderSideBar() {
         return (
             <div >
-                <Drawer containerStyle={{top: 75, left: 8}} open={this.state.open}>
+                <Drawer containerStyle={{top: 40, left: 8}} open={this.state.open}>
                     <MenuItem>Menu Item</MenuItem>
                     <MenuItem>Menu Item 2</MenuItem>
                 </Drawer>
-                <Drawer containerStyle={{top: 75, right: 9}} openSecondary={true} open={this.state.open}>
+                <Drawer containerStyle={{top: 40, right: 9}} openSecondary={true} open={this.state.open}>
                     <MenuItem>
                         <div style={{display:'flex',justifyContent:'center',width:'100%',height:150,marginTop:20}}>
                             <div  style={{width:150,height:150}}>
