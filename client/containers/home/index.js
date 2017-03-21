@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getNews} from '../../actions';
 import * as scss from './scss/root.scss'
+import Slider from 'nuka-carousel'
+import CircularProgress from 'material-ui/CircularProgress';
 
 
 @connect(({news, state}) => ({...news, state}), {getNews})
+
 
 class Home extends Component {
 
@@ -13,23 +16,46 @@ class Home extends Component {
         getNews()
     }
 
+
+
+
     render() {
+
+
         return (
             <div className="row animated fadeInUp">
-                <div className="col-lg-12 col-md-12 col-xs-12">
-                    <div className="rootBlog">
+                <section className="col-lg-12 col-md-12 col-xs-12">
+                    <div className="rootBlog" style={{padding:0}}>
+                        <div className="rootImage">
+                            <img src={require('../../../assets/reactmini.png')} alt="background"/>
+                        </div>
+                        <div className="avatarWrap">
+                            <div style={{width:150,height:150}}>
+                                <img src={require('../../../assets/avatar.jpg')} alt='avatar'/>
+                                <div style={{position:'absolute',top:0}}>
+                                    <CircularProgress size={150} thickness={5} />
+                                </div>
+                            </div>
+                        </div>
 
-                            <div style={{width:'100%',height: 500,
-                                overflow: 'hidden'}} >
-                                <img style={{width:'100%'}} src="https://pp.userapi.com/c620716/v620716855/19c47/l4g1KD3wgYI.jpg" alt=""/>
+                    </div>
+                </section>
+                <section className="col-lg-12 col-md-12 col-xs-12">
+                    <div className="infoSlider">
+                        <Slider style={{margin:'10px',height: '250px',overflow:'hidden'}} speed={500} autoplay={true} autoplayInterval={5000} wrapAround={true} cellAlign="center">
+                            <div style={{display:'flex'}}>
+                                <div style={{width:100,height:100, borderRadius:'100%',border:'5px solid white',overflow:'hidden'}}>
+                                    <img style={{height:'100%'}} src={require('../../../assets/avatar.jpg')} alt="background"/>
+                                </div>
+                                <div>
+                                    <h2>Junior React JS</h2>
+                                </div>
                             </div>
 
-                        <h2>Оля Деречей</h2>
+                        </Slider>
                     </div>
-                    <div>
-                        <video src="https://www.facebook.com/914e3ecb-3e39-4027-a55e-2d4a15c9c078" width="694" height="390" poster="poster.gif" controls />
-                    </div>
-                </div>
+
+                </section>
             </div>
 
         );
