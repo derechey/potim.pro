@@ -5,6 +5,8 @@ import * as scss from './scss/root.scss'
 import {autoPlay} from 'react-swipeable-views-utils';
 import SwipeableViews from "react-swipeable-views";
 import CircularProgress from 'material-ui/CircularProgress';
+import {FirstSlide} from '../../components'
+import {SecondSlide} from '../../components'
 
 @connect(({news, state}) => ({...news, state}), {getNews})
 
@@ -18,14 +20,19 @@ class Home extends Component {
     render() {
         const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
         return (
-            <div className="row">
-                <section className="col-lg-12 col-md-12 col-xs-12  animated fadeInLeft">
-                    <div className="rootBlog" style={{padding: 0}}>
-                        <div className="rootImage">
-                            <img src={require('../../../assets/reactmini.png')} alt="background"/>
+            <div>
+
+
+                <div className="row">
+                    <section className="col-lg-12 col-md-12 col-xs-12  animated fadeInLeft">
+                        <div className="rootBlog" style={{padding: 0}}>
+                            <div className="rootImage">
+                                <img src={require('../../../assets/reactmini.png')} alt="background"/>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
+
 
                 <div className="row">
                     <section className="col-lg-12 col-md-12 col-xs-12">
@@ -40,126 +47,37 @@ class Home extends Component {
                     </section>
                 </div>
 
-                <section className="col-lg-12 col-md-12 col-xs-12 animated fadeInRight">
-                    <div className="infoSlider">
-                        <AutoPlaySwipeableViews interval={10000}
-                                                style={{margin: '10px', height: '310px', overflow: 'hidden'}}>
-                            <div style={{display: 'flex'}}>
-
-                                <ul className="animated zoomInDown ">
-                                    <li>
-                                        <div style={{
-                                            width: 100,
-                                            height: 100,
-                                            borderRadius: '100%',
-                                            border: '5px solid white',
-                                            overflow: 'hidden'
-                                        }}>
-                                            <img style={{height: '100%'}} src={require('../../../assets/avatar.jpg')}
-                                                 alt="background"/>
-                                        </div>
-                                    </li>
-                                    <ul>
-                                        <li>
-                                            <ul>
-                                                <li>
-                                                    <div style={{
-                                                        width: 60,
-                                                        height: 60,
-                                                        borderRadius: '100%',
-                                                        border: '5px solid white',
-                                                        overflow: 'hidden'
-                                                    }}>
-                                                        <img style={{height: '100%'}}
-                                                             src={require('../../../assets/avatar4.jpg')}
-                                                             alt="background"/>
-                                                    </div>
-                                                    <div style={{
-                                                        width: 70,
-                                                        height: 70,
-                                                        borderRadius: '100%',
-                                                        border: '5px solid white',
-                                                        overflow: 'hidden'
-                                                    }}>
-                                                        <img style={{height: '100%'}}
-                                                             src={require('../../../assets/avatar3.jpg')}
-                                                             alt="background"/>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <li>
-                                        <div style={{
-                                            width: 80,
-                                            height: 80,
-                                            borderRadius: '100%',
-                                            border: '5px solid white',
-                                            overflow: 'hidden'
-                                        }}>
-                                            <img style={{height: '100%'}} src={require('../../../assets/avatar2.jpg')}
-                                                 alt="background"/>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div>
-                                    <h2>Junior React JS</h2>
+                <div className="row">
+                    <section className="col-lg-12 col-md-12 col-xs-12 animated fadeInRight">
+                        <div className="infoSlider">
+                            <AutoPlaySwipeableViews interval={10000}
+                                                    style={{margin: '10px'}}>
+                                <div style={{display: 'flex', height: 300, justifyContent: 'space-around'}}>
+                                    <FirstSlide percent={90} skill={'Html'}/>
+                                    <FirstSlide percent={90} skill={'CSS'}/>
+                                    <FirstSlide percent={90} skill={'SCSS'}/>
+                                    <FirstSlide percent={70} skill={'Bem'}/>
+                                    <FirstSlide percent={90} skill={'Material ui'}/>
+                                    <FirstSlide percent={80} skill={'Jira'}/>
+                                    <FirstSlide percent={45} skill={'Gulp'}/>
+                                    <FirstSlide percent={90} skill={'Git'}/>
+                                    <FirstSlide percent={93} skill={'Bootstrap'}/>
+                                    <FirstSlide percent={90} skill={'Json'}/>
+                                    <FirstSlide percent={75} skill={'Rest'}/>
+                                    <FirstSlide percent={95} skill={'Inline css'}/>
+                                    <FirstSlide percent={90} skill={'FlexBox'}/>
                                 </div>
-                            </div>
 
-
-                            <div style={{display: 'flex'}}>
-                                <div style={{
-                                    width: 100,
-                                    height: 100,
-                                    borderRadius: '100%',
-                                    border: '5px solid white',
-                                    overflow: 'hidden'
-                                }}>
-                                    <img style={{height: '100%'}} src={require('../../../assets/avatar.jpg')}
-                                         alt="background"/>
+                                <div style={{marginTop: 80}}>
+                                    <SecondSlide/>
                                 </div>
-                                <div className="skillsHTML">
-                                    <ul>
-                                        <li>
-                                            <p>HTML</p>
-                                            <ul>
-                                                <li>
-                                                    <p>CSS</p>
-                                                    <ul>
-                                                        <li>
-                                                            <p>SCSS</p>
-                                                            <ul>
-                                                                <li>
-                                                                    <p> FlexBox</p>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <p>Inline css</p>
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <p>BEM</p>
-                                                                                    <ul>
-                                                                                        <li>Animate CSS</li>
-                                                                                    </ul>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                        </AutoPlaySwipeableViews>
-                    </div>
+                            </AutoPlaySwipeableViews>
+                        </div>
 
-                </section>
+                    </section>
+                </div>
+
             </div>
 
         );
